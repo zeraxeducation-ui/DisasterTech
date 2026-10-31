@@ -89,19 +89,19 @@
             </div>
 
             <nav class="space-y-2">
-                <a href="#" class="flex items-center gap-3 px-4 py-3 bg-white/10 rounded-xl text-cyan-300 transition-colors border border-white/5">
+                <a href="#" data-target="view-dashboard" class="nav-link flex items-center gap-3 px-4 py-3 bg-white/10 rounded-xl text-cyan-300 transition-colors border border-white/5">
                     <i class="ph ph-squares-four text-xl"></i>
                     <span class="font-medium">Dashboard</span>
                 </a>
-                <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 text-slate-400 hover:text-slate-200 transition-colors">
+                <a href="#" data-target="view-map" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 text-slate-400 border border-transparent transition-colors">
                     <i class="ph ph-map-trifold text-xl"></i>
                     <span class="font-medium">Map View</span>
                 </a>
-                <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 text-slate-400 hover:text-slate-200 transition-colors">
+                <a href="#" data-target="view-reports" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 text-slate-400 border border-transparent transition-colors">
                     <i class="ph ph-files text-xl"></i>
                     <span class="font-medium">Reports</span>
                 </a>
-                <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 text-slate-400 hover:text-slate-200 transition-colors">
+                <a href="#" data-target="view-analytics" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 text-slate-400 border border-transparent transition-colors">
                     <i class="ph ph-chart-line-up text-xl"></i>
                     <span class="font-medium">Analytics</span>
                 </a>
@@ -120,91 +120,78 @@
     </aside>
 
     <!-- Main Content Area -->
-    <main class="flex-1 p-4 md:p-6 lg:p-8 overflow-y-auto w-full">
-        <!-- Top Header Stats -->
-        <header class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-            <div class="glass-panel p-4 rounded-2xl">
-                <p class="text-sm text-slate-400 mb-1">Active Incidents</p>
-                <div class="flex items-baseline gap-2">
-                    <h2 class="text-3xl font-bold text-white transition-all duration-300" id="active-incidents-count">14</h2>
-                    <span class="text-xs text-red-400 bg-red-400/10 px-2 py-0.5 rounded-full" id="active-trend">+Live</span>
+    <main class="flex-1 p-4 md:p-6 lg:p-8 overflow-y-auto w-full relative">
+        
+        <!-- ==================== VIEW: DASHBOARD ==================== -->
+        <section id="view-dashboard" class="view-section block space-y-6">
+            <!-- Top Header Stats -->
+            <header class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="glass-panel p-4 rounded-2xl">
+                    <p class="text-sm text-slate-400 mb-1">Active Incidents</p>
+                    <div class="flex items-baseline gap-2">
+                        <h2 class="text-3xl font-bold text-white transition-all duration-300" id="active-incidents-count">14</h2>
+                        <span class="text-xs text-red-400 bg-red-400/10 px-2 py-0.5 rounded-full" id="active-trend">+Live</span>
+                    </div>
                 </div>
-            </div>
-            <div class="glass-panel p-4 rounded-2xl">
-                <p class="text-sm text-slate-400 mb-1">Avg AI Processing Time</p>
-                <div class="flex items-baseline gap-2">
-                    <h2 class="text-3xl font-bold text-white">1.2s</h2>
-                    <span class="text-xs text-green-400 bg-green-400/10 px-2 py-0.5 rounded-full">Optimized</span>
+                <div class="glass-panel p-4 rounded-2xl">
+                    <p class="text-sm text-slate-400 mb-1">Avg AI Processing</p>
+                    <div class="flex items-baseline gap-2">
+                        <h2 class="text-3xl font-bold text-white">1.2s</h2>
+                        <span class="text-xs text-green-400 bg-green-400/10 px-2 py-0.5 rounded-full">Optimized</span>
+                    </div>
                 </div>
-            </div>
-            <div class="glass-panel p-4 rounded-2xl">
-                <p class="text-sm text-slate-400 mb-1">Duplicate Rate</p>
-                <div class="flex items-baseline gap-2">
-                    <h2 class="text-3xl font-bold text-white">12%</h2>
-                    <span class="text-xs text-slate-300 bg-white/10 px-2 py-0.5 rounded-full">Filtered</span>
+                <div class="glass-panel p-4 rounded-2xl">
+                    <p class="text-sm text-slate-400 mb-1">Duplicate Rate</p>
+                    <div class="flex items-baseline gap-2">
+                        <h2 class="text-3xl font-bold text-white">12%</h2>
+                        <span class="text-xs text-slate-300 bg-white/10 px-2 py-0.5 rounded-full">Filtered</span>
+                    </div>
                 </div>
-            </div>
-            <div class="glass-panel p-4 rounded-2xl">
-                <p class="text-sm text-slate-400 mb-1">System Status</p>
-                <div class="flex items-center gap-2 h-full">
-                    <div class="w-3 h-3 bg-green-500 rounded-full shadow-[0_0_10px_#22c55e]"></div>
-                    <span class="text-lg font-medium text-white">Online & Tracking</span>
+                <div class="glass-panel p-4 rounded-2xl">
+                    <p class="text-sm text-slate-400 mb-1">System Status</p>
+                    <div class="flex items-center gap-2 h-full">
+                        <div class="w-3 h-3 bg-green-500 rounded-full shadow-[0_0_10px_#22c55e]"></div>
+                        <span class="text-lg font-medium text-white">Online</span>
+                    </div>
                 </div>
-            </div>
-        </header>
+            </header>
 
-        <!-- Main Grid Layout -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
-            
-            <!-- Left Column: Map View -->
-            <div class="lg:col-span-2 glass-panel rounded-2xl p-1 relative overflow-hidden h-[400px] flex flex-col z-10">
-                <div id="map" class="w-full h-full rounded-xl z-0"></div>
-                <div class="absolute top-4 left-16 z-[400] pointer-events-none">
-                    <span class="bg-black/70 backdrop-blur text-xs font-semibold px-3 py-1.5 rounded-full border border-white/20 text-white shadow-lg flex items-center gap-2">
-                        <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-                        Live Satellite + AI Tracking
-                    </span>
-                </div>
-            </div>
-
-            <!-- Right Column: Incident Reporting Form & Weather -->
-            <div class="flex flex-col gap-6 h-fit z-10">
-                
-                <!-- NEW: Live Marine Weather Widget -->
-                <div class="glass-panel rounded-2xl p-5 border border-cyan-500/20 shadow-[0_0_15px_rgba(6,182,212,0.1)] relative overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Weather Widget -->
+                <div class="glass-panel rounded-2xl p-5 border border-cyan-500/20 shadow-[0_0_15px_rgba(6,182,212,0.1)] relative overflow-hidden h-fit">
                     <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-3xl -mr-10 -mt-10"></div>
                     <div class="flex items-center justify-between mb-4 relative z-10">
                         <div class="flex items-center gap-2">
                             <i class="ph-fill ph-cloud-warning text-2xl text-cyan-400"></i>
-                            <h3 class="text-sm font-bold text-white tracking-wide">Live Marine Weather</h3>
+                            <h3 class="text-lg font-bold text-white tracking-wide">Live Marine Weather</h3>
                         </div>
                         <span class="flex h-2 w-2 relative" title="Sensor Active">
                             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                             <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500 shadow-[0_0_8px_#22c55e]"></span>
                         </span>
                     </div>
-                    <div class="grid grid-cols-2 gap-3 text-sm relative z-10">
-                        <div class="bg-slate-900/40 rounded-xl p-3 border border-white/5 backdrop-blur-sm">
-                            <p class="text-[10px] uppercase tracking-wider text-slate-400 mb-1 flex items-center gap-1"><i class="ph-bold ph-waves"></i> Wave Height</p>
-                            <p class="text-xl font-bold text-blue-300">2.4m <span class="text-xs text-red-400 ml-1 animate-bounce inline-block">↑</span></p>
+                    <div class="grid grid-cols-2 gap-4 text-sm relative z-10">
+                        <div class="bg-slate-900/40 rounded-xl p-4 border border-white/5 backdrop-blur-sm">
+                            <p class="text-xs uppercase tracking-wider text-slate-400 mb-1 flex items-center gap-1"><i class="ph-bold ph-waves"></i> Wave Height</p>
+                            <p class="text-2xl font-bold text-blue-300">2.4m <span class="text-sm text-red-400 ml-1 animate-bounce inline-block">↑</span></p>
                         </div>
-                        <div class="bg-slate-900/40 rounded-xl p-3 border border-white/5 backdrop-blur-sm">
-                            <p class="text-[10px] uppercase tracking-wider text-slate-400 mb-1 flex items-center gap-1"><i class="ph-bold ph-wind"></i> Wind Speed</p>
-                            <p class="text-xl font-bold text-teal-300">28 km/h</p>
+                        <div class="bg-slate-900/40 rounded-xl p-4 border border-white/5 backdrop-blur-sm">
+                            <p class="text-xs uppercase tracking-wider text-slate-400 mb-1 flex items-center gap-1"><i class="ph-bold ph-wind"></i> Wind Speed</p>
+                            <p class="text-2xl font-bold text-teal-300">28 km/h</p>
                         </div>
-                        <div class="bg-slate-900/40 rounded-xl p-3 border border-white/5 backdrop-blur-sm">
-                            <p class="text-[10px] uppercase tracking-wider text-slate-400 mb-1 flex items-center gap-1"><i class="ph-bold ph-moon-stars"></i> Tide Status</p>
-                            <p class="text-xl font-bold text-indigo-300">High Tide</p>
+                        <div class="bg-slate-900/40 rounded-xl p-4 border border-white/5 backdrop-blur-sm">
+                            <p class="text-xs uppercase tracking-wider text-slate-400 mb-1 flex items-center gap-1"><i class="ph-bold ph-moon-stars"></i> Tide Status</p>
+                            <p class="text-2xl font-bold text-indigo-300">High Tide</p>
                         </div>
-                        <div class="bg-slate-900/40 rounded-xl p-3 border border-white/5 backdrop-blur-sm">
-                            <p class="text-[10px] uppercase tracking-wider text-slate-400 mb-1 flex items-center gap-1"><i class="ph-bold ph-thermometer"></i> Water Temp</p>
-                            <p class="text-xl font-bold text-cyan-300">26°C</p>
+                        <div class="bg-slate-900/40 rounded-xl p-4 border border-white/5 backdrop-blur-sm">
+                            <p class="text-xs uppercase tracking-wider text-slate-400 mb-1 flex items-center gap-1"><i class="ph-bold ph-thermometer"></i> Water Temp</p>
+                            <p class="text-2xl font-bold text-cyan-300">26°C</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Form -->
-                <div class="glass-panel rounded-2xl p-6">
+                <!-- Submission Form -->
+                <div class="glass-panel rounded-2xl p-6 h-fit">
                     <div class="mb-5 flex items-center gap-3">
                         <div class="bg-cyan-500/20 p-2 rounded-lg text-cyan-400">
                             <i class="ph-bold ph-warning text-xl"></i>
@@ -235,26 +222,55 @@
                                 </select>
                             </div>
                         </div>
-
-                        <!-- Initial Severity Estimate -->
                         <div>
                             <label class="block text-xs font-medium text-slate-400 mb-1.5 uppercase tracking-wider">Reporter Severity Estimate</label>
+                            <div class="grid grid-cols-3 gap-3">
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="severity" value="Low" class="peer sr-only" required>
+                                    <div class="text-center px-2 py-2 rounded-xl border border-white/10 text-slate-400 peer-checked:bg-green-500/20 peer-checked:text-green-400 peer-checked:border-green-500/50 transition-all text-xs font-semibold">Low</div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="severity" value="Medium" class="peer sr-only">
+                                    <div class="text-center px-2 py-2 rounded-xl border border-white/10 text-slate-400 peer-checked:bg-yellow-500/20 peer-checked:text-yellow-400 peer-checked:border-yellow-500/50 transition-all text-xs font-semibold">Medium</div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="severity" value="High" class="peer sr-only">
+                                    <div class="text-center px-2 py-2 rounded-xl border border-white/10 text-slate-400 peer-checked:bg-red-500/20 peer-checked:text-red-400 peer-checked:border-red-500/50 transition-all text-xs font-semibold">High</div>
+                                </label>
+                            </div>
+                        </div>
+                        <button type="submit" class="w-full bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-bold py-3 rounded-xl transition-all shadow-[0_0_15px_rgba(6,182,212,0.4)] hover:shadow-[0_0_25px_rgba(6,182,212,0.6)] flex items-center justify-center gap-2">
+                            <i class="ph-bold ph-paper-plane-right text-lg"></i> Submit Report
+                        </button>
+                    </form>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Secondary Grid Layout (Reports & Analytics) -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 pb-8">
-            
-            <!-- Coordinator Dashboard (Incident Grid) -->
-            <div class="lg:col-span-2 glass-panel rounded-2xl p-5 flex flex-col h-full overflow-hidden">
-                <div class="flex justify-between items-center mb-4">
+        <!-- ==================== VIEW: MAP ==================== -->
+        <section id="view-map" class="view-section hidden h-[calc(100vh-4rem)] lg:h-[calc(100vh-6rem)]">
+            <div class="glass-panel rounded-2xl p-1 relative overflow-hidden h-full flex flex-col z-10 w-full">
+                <div id="map" class="w-full h-full rounded-xl z-0"></div>
+                <div class="absolute top-4 left-4 z-[400] pointer-events-none">
+                    <span class="bg-black/70 backdrop-blur text-xs font-semibold px-3 py-1.5 rounded-full border border-white/20 text-white shadow-lg flex items-center gap-2">
+                        <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                        Live Satellite + AI Tracking
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== VIEW: REPORTS ==================== -->
+        <section id="view-reports" class="view-section hidden h-full">
+            <div class="glass-panel rounded-2xl p-5 flex flex-col h-[calc(100vh-4rem)] lg:h-[calc(100vh-6rem)] overflow-hidden">
+                <div class="flex justify-between items-center mb-4 shrink-0">
                     <h3 class="text-lg font-semibold text-white flex items-center gap-2"><i class="ph ph-files text-cyan-400"></i> Incident Reports Log</h3>
                     <button class="text-sm bg-white/5 hover:bg-white/10 border border-white/10 px-3 py-1.5 rounded-lg transition-colors flex items-center gap-2">
                         <i class="ph ph-arrows-clockwise"></i> Sync
                     </button>
                 </div>
                 
-                <div class="overflow-y-auto pr-2 custom-scrollbar">
+                <div class="overflow-y-auto pr-2 custom-scrollbar flex-1">
                     <table class="w-full text-left border-collapse">
                         <thead>
                             <tr class="text-xs uppercase text-slate-400 border-b border-white/10 sticky top-0 bg-[#0f172a]/90 backdrop-blur z-10">
@@ -266,7 +282,7 @@
                             </tr>
                         </thead>
                         <tbody class="text-sm" id="incident-table-body">
-                            <!-- Existing Mock Data -->
+                            <!-- Populated dynamically by JS -->
                             <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
                                 <td class="py-3 pr-4">
                                     <div class="font-medium text-white">08:02 AM</div>
@@ -276,60 +292,33 @@
                                     <span class="inline-flex items-center gap-1.5"><i class="ph ph-waves text-blue-400"></i> Drowning Risk</span>
                                 </td>
                                 <td class="py-3 pr-4">
-                                    <span class="bg-red-500/20 text-red-400 border border-red-500/30 px-2.5 py-1 rounded-full text-xs font-semibold">High Severity</span>
+                                    <span class="bg-red-500/20 text-red-400 border border-red-500/30 px-2.5 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider">AI: Critical</span>
                                 </td>
                                 <td class="py-3 pr-4 text-slate-400 text-xs">0.8s</td>
                                 <td class="py-3">
-                                    <button class="text-cyan-400 hover:text-cyan-300 text-xs font-medium">Dispatch Unit</button>
-                                </td>
-                            </tr>
-                            <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
-                                <td class="py-3 pr-4">
-                                    <div class="font-medium text-white">07:45 AM</div>
-                                    <div class="text-xs text-slate-400">Rushikonda</div>
-                                </td>
-                                <td class="py-3 pr-4">
-                                    <span class="inline-flex items-center gap-1.5"><i class="ph ph-warning-circle text-orange-400"></i> Rip Current</span>
-                                </td>
-                                <td class="py-3 pr-4">
-                                    <span class="bg-yellow-500/20 text-yellow-400 border border-yellow-500/30 px-2.5 py-1 rounded-full text-xs font-semibold">Duplicate Warning</span>
-                                </td>
-                                <td class="py-3 pr-4 text-slate-400 text-xs">1.1s</td>
-                                <td class="py-3">
-                                    <button class="text-slate-400 hover:text-slate-300 text-xs font-medium">Review</button>
-                                </td>
-                            </tr>
-                            <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
-                                <td class="py-3 pr-4">
-                                    <div class="font-medium text-white">07:15 AM</div>
-                                    <div class="text-xs text-slate-400">RK Beach</div>
-                                </td>
-                                <td class="py-3 pr-4">
-                                    <span class="inline-flex items-center gap-1.5"><i class="ph ph-trash text-green-400"></i> Marine Debris</span>
-                                </td>
-                                <td class="py-3 pr-4">
-                                    <span class="bg-blue-500/20 text-blue-400 border border-blue-500/30 px-2.5 py-1 rounded-full text-xs font-semibold">Low Priority</span>
-                                </td>
-                                <td class="py-3 pr-4 text-slate-400 text-xs">0.9s</td>
-                                <td class="py-3">
-                                    <button class="text-slate-400 hover:text-slate-300 text-xs font-medium">Log</button>
+                                    <div class="flex gap-2">
+                                        <button class="bg-red-500 hover:bg-red-600 text-white px-2.5 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-wider transition-colors shadow-lg shadow-red-500/20 flex items-center gap-1">Deploy Unit</button>
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
+        </section>
 
-            <!-- Analytics Chart -->
-            <div class="glass-panel rounded-2xl p-5 flex flex-col h-[300px] lg:h-auto">
-                <div class="flex justify-between items-center mb-4">
+        <!-- ==================== VIEW: ANALYTICS ==================== -->
+        <section id="view-analytics" class="view-section hidden h-full">
+            <div class="glass-panel rounded-2xl p-5 flex flex-col h-[calc(100vh-4rem)] lg:h-[calc(100vh-6rem)]">
+                <div class="flex justify-between items-center mb-4 shrink-0">
                     <h3 class="text-lg font-semibold text-white flex items-center gap-2"><i class="ph ph-chart-line-up text-cyan-400"></i> Trend Analysis</h3>
                 </div>
-                <div class="relative w-full flex-1">
+                <div class="relative w-full flex-1 min-h-[300px]">
                     <canvas id="incidentChart"></canvas>
                 </div>
             </div>
-        </div>
+        </section>
+
     </main>
 
     <!-- Custom Toast Notification -->
@@ -536,7 +525,10 @@
                     
                     // Auto-pan camera for Critical events or manual submissions
                     if(isManual || finalSeverity === "Critical") {
-                        map.flyTo(finalCoords, 13, { duration: 1.2 });
+                        // Prevent NaN error by ensuring map is visible before animating
+                        if (document.getElementById('map').clientWidth > 0) {
+                            map.flyTo(finalCoords, 13, { duration: 1.2 });
+                        }
                     }
                 }
 
@@ -580,6 +572,41 @@
             
             // Trigger one immediately on load for visual effect
             setTimeout(triggerSimulatedIncident, 1500);
+
+            // --- Navigation SPA Logic ---
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('.view-section');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    
+                    // Update active tab styling
+                    navLinks.forEach(l => {
+                        l.classList.remove('bg-white/10', 'text-cyan-300', 'border-white/5');
+                        l.classList.add('hover:bg-white/5', 'text-slate-400', 'border-transparent');
+                    });
+                    link.classList.remove('hover:bg-white/5', 'text-slate-400', 'border-transparent');
+                    link.classList.add('bg-white/10', 'text-cyan-300', 'border-white/5');
+
+                    // Switch views
+                    const targetId = link.getAttribute('data-target');
+                    sections.forEach(sec => {
+                        sec.classList.remove('block');
+                        sec.classList.add('hidden');
+                    });
+                    
+                    const targetSection = document.getElementById(targetId);
+                    targetSection.classList.remove('hidden');
+                    targetSection.classList.add('block');
+
+                    // Fix map rendering when it becomes visible
+                    if (targetId === 'view-map') {
+                        // Small delay ensures the DOM has painted the display:block before calculating map size
+                        setTimeout(() => map.invalidateSize(), 50);
+                    }
+                });
+            });
 
         });
     </script>
